@@ -1,4 +1,4 @@
-const API = "https://expense-tracker-backend-aq81.onrender.com/api";
+const API = "https://expense-tracker-backend-aq81.onrender.com/";
 
 function getToken() {
     return localStorage.getItem("token");
@@ -20,5 +20,6 @@ async function apiPost(url, body) {
         body: JSON.stringify(body)
     }).then(res => res.json());
 }
+
 
 
