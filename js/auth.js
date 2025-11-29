@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://expense-tracker-backend-aq81.onrender.com/";
 
 function saveToken(token) {
     localStorage.setItem("token", token);
@@ -48,3 +48,4 @@ async function registerUser() {
         window.location.href = "login.html";
     }
 }
+
