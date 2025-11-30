@@ -4,7 +4,7 @@ if (window.location.pathname.includes("index.html")) {
 }
 
 async function loadDashboard() {
-    const data = await apiGet("api/transactions/summary");
+    const data = await apiGet("/api/transactions/summary");
 
     document.getElementById("balance").innerText = `Total Balance: ₹${data.balance}`;
     document.getElementById("summary").innerText =
@@ -21,7 +21,7 @@ async function addTransaction() {
         date: document.getElementById("date").value
     };
 
-    const result = await apiPost("api/transactions/add", body);
+    const result = await apiPost("/api/transactions/add", body);
     alert("Transaction Added!");
     window.location.href = "transactions.html";
 }
@@ -48,5 +48,6 @@ async function loadTransactions() {
         </tr>`;
     });
 }
+
 
 
