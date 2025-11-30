@@ -1,4 +1,5 @@
-const API_URL = "https://expense-tracker-backend-aq81.onrender.com/";
+const API_URL = "https://expense-tracker-backend-aq81.onrender.com";
+
 function saveToken(token) {
     localStorage.setItem("token", token);
 }
@@ -12,7 +13,7 @@ async function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch(`${API_URL}api/auth/login`, {
+    const res = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email, password})
@@ -23,7 +24,7 @@ async function login() {
     if (data.token) {
         saveToken(data.token);
         alert("Login Successful");
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html"; // Redirect to dashboard
     } else {
         alert(data.message);
     }
@@ -34,7 +35,7 @@ async function registerUser() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch(`${API_URL}api/auth/register`, {
+    const res = await fetch(`${API_URL}/auth/register`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({name, email, password})
@@ -45,12 +46,7 @@ async function registerUser() {
     if (data.message) {
         alert("Registration Successful");
         window.location.href = "login.html";
+    } else {
+        alert(data.message);
     }
 }
-
-
-
-
-
-
-
