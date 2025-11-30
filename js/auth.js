@@ -13,7 +13,7 @@ async function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch(`${API_URL}/auth/login`, {
+    const res = await fetch(`${API_URL}api/auth/login`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email, password})
@@ -24,7 +24,7 @@ async function login() {
     if (data.token) {
         saveToken(data.token);
         alert("Login Successful");
-        window.location.href = "dashboard.html"; // Redirect to dashboard
+        window.location.href = "index.html"; // Redirect to dashboard
     } else {
         alert(data.message);
     }
@@ -35,7 +35,7 @@ async function registerUser() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch(`${API_URL}/auth/register`, {
+    const res = await fetch(`${API_URL}api/auth/register`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({name, email, password})
@@ -50,3 +50,4 @@ async function registerUser() {
         alert(data.message);
     }
 }
+
