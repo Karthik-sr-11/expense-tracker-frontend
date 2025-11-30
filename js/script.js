@@ -44,10 +44,11 @@ async function loadTransactions() {
             <td>₹${t.amount}</td>
             <td>${t.type}</td>
             <td>${t.category}</td>
-            <td>${t.date}</td>
+            <td>${formatDate(t.date)}</td>
         </tr>`;
     });
 }
+
 
 
 
