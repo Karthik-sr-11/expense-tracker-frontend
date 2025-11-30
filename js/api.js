@@ -1,26 +1,26 @@
-const API_BASE_URL = "https://expense-tracker-backend-aq81.onrender.com/";
+const API_BASE_URL = "https://expense-tracker-backend-aq81.onrender.com";
 
 function getToken() {
     return localStorage.getItem("token");
 }
 
 async function apiGet(url) {
-    return fetch(API + url, {
-        headers: {"Authorization": "Bearer " + getToken()}
-    }).then(res => res.json());
+    const res = await fetch(API_BASE_URL + url, {
+        headers: {
+            "Authorization": "Bearer " + getToken()
+        }
+    });
+    return res.json();
 }
 
 async function apiPost(url, body) {
-    return fetch(API + url, {
+    const res = await fetch(API_BASE_URL + url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + getToken()
         },
         body: JSON.stringify(body)
-    }).then(res => res.json());
+    });
+    return res.json();
 }
-
-
-
-
