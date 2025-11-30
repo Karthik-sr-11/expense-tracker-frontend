@@ -73,3 +73,32 @@ th, td {
     padding: 12px;
     border-bottom: 1px solid #30363d;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    vertical-align: middle;
+}
+
+th {
+    font-weight: 600;
+    color: #fff;
+}
+
+td {
+    color: #ddd;
+}
+
+/* Fix column widths for perfect alignment */
+th:nth-child(1), td:nth-child(1) { width: 20%; }  /* Title */
+th:nth-child(2), td:nth-child(2) { width: 15%; }  /* Amount */
+th:nth-child(3), td:nth-child(3) { width: 15%; }  /* Type */
+th:nth-child(4), td:nth-child(4) { width: 25%; }  /* Category */
+th:nth-child(5), td:nth-child(5) { width: 25%; }  /* Date */
+
+
