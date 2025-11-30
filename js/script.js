@@ -33,7 +33,7 @@ if (window.location.pathname.includes("transactions.html")) {
 
 async function loadTransactions() {
     const list = document.getElementById("transactionList");
-    const transactions = await apiGet("/transactions");
+    const transactions = await apiGet("api/transactions");
 
     list.innerHTML = "";
 
@@ -48,6 +48,7 @@ async function loadTransactions() {
         </tr>`;
     });
 }
+
 
 
 
